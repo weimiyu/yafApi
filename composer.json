@@ -1,0 +1,43 @@
+{
+  "name":"weimiyu/test",
+  "description": "api",
+  "type": "sdk",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "weimiyu",
+      "email": "weimiyu18@gmail.com"
+    }
+  ],
+
+  "minimum-stability": "dev",
+
+  "require": {
+    "illuminate/database": "5.0.*",
+    "illuminate/events": "5.0.*",
+    "symfony/debug": "2.6.*",
+    "symfony/var-dumper": "2.6.*",
+    "predis/predis":"*"
+  },
+
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  },
+
+  "autoload": {
+    "psr-4": {
+      "App\\Models\\": "application/models",
+      "App\\Modules\\Service\\":"application/modules/service"
+
+    },
+    "files": [
+      "application/Functions.php"
+    ]
+
+  }
+
+
+}
