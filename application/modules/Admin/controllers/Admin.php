@@ -23,7 +23,9 @@ class AdminController extends Controller_Abstract
         //引用公共函数
 //        human_file('');
         $AdminModel =  new AdminSer();
-        $AdminModel->getAdmin();
+        $id = 1;
+        $data = $AdminModel->getAdmin($id);
+        $this->getView()->assign("data", $data);
     }
 
 

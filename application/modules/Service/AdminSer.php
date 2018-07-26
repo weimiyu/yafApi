@@ -12,10 +12,10 @@ use App\Models\Admin\Admin;
 class AdminSer
 {
 
-    public function getAdmin()
+    public function getAdmin($id)
     {
         echo 'service';
-        $user = Admin::find(1)->toArray();
+        $user = Admin::find($id)->toArray();
         dd($user);
     }
 }

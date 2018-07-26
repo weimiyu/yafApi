@@ -27,7 +27,7 @@ class Bootstrap extends Bootstrap_Abstract
      */
     public function _initVendor(Dispatcher $dispatcher)
     {
-        define('PROJECT_NAME', 'yafApi');
+        define('PROJECT_NAME', 'test');
         require APP_PATH . '/vendor/autoload.php';
     }
 
@@ -39,7 +39,7 @@ class Bootstrap extends Bootstrap_Abstract
     {
         $this->config = Application::app()->getConfig();
         Registry::set('config', $this->config);
-	}
+    }
 
     /**
      * 初始化 Eloquent ORM
@@ -65,20 +65,22 @@ class Bootstrap extends Bootstrap_Abstract
     {
 //        $dispatcher->initView(APP_PATH.'/application/templates/');
 
+        $twig = new \Twig\Adapter(APP_PATH . "/application/views/", $this->config->twig->toArray());
+        $dispatcher->setView($twig);
     }
 
-	public function _initPlugin(Dispatcher $dispatcher)
+    public function _initPlugin(Dispatcher $dispatcher)
     {
-		//注册一个插件
+        //注册一个插件
 //		$objSamplePlugin = new SamplePlugin();
 //		$dispatcher->registerPlugin($objSamplePlugin);
 
-	}
+    }
 
 
-	public function _initRoute(Dispatcher $dispatcher)
+    public function _initRoute(Dispatcher $dispatcher)
     {
 
-	}
+    }
 
 }
